@@ -33,5 +33,19 @@ namespace ClassRoom
         {
             get { return _fødselsdag; }
         }
+
+        public override string ToString()
+        {
+            return _navn + " " + _fødselsdag + " " + _fødselsmåned;
+        }
+
+        public void Årstid()
+        {
+            switch (_fødselsmåned)
+            {
+                
+                    break;
+            }
+        }
     }
 }

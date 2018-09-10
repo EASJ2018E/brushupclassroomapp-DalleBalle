@@ -27,6 +27,7 @@ namespace ClassRoom
         public List<Studerende> Klasseliste
         {
             get { return _klasseliste; }
+            set { this._klasseliste = value; }
         }
 
         public DateTime Semesterstart
