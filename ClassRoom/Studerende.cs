@@ -39,12 +39,34 @@ namespace ClassRoom
             return _navn + " " + _fødselsdag + " " + _fødselsmåned;
         }
 
-        public void Årstid()
+        public string Årstid()
         {
             switch (_fødselsmåned)
             {
-                
-                    break;
+                case int _fødselsmåned when _fødselsmåned == 1:
+                    return "Vinter";
+                case int _fødselsmåned when _fødselsmåned == 2:
+                    return "Vinter";
+                case int _fødselsmåned when _fødselsmåned == 3:
+                    return "Forår";
+                case int _fødselsmåned when _fødselsmåned == 4:
+                    return "Forår";
+                case int _fødselsmåned when _fødselsmåned == 5:
+                    return "Forår";
+                case int _fødselsmåned when _fødselsmåned == 6:
+                    return "Sommer";
+                case int _fødselsmåned when _fødselsmåned == 7:
+                    return "Sommer";
+                case int _fødselsmåned when _fødselsmåned == 8:
+                    return "Sommer";
+                case int _fødselsmåned when _fødselsmåned == 9:
+                    return "Efterår";
+                case int _fødselsmåned when _fødselsmåned == 10:
+                    return "Efterår";
+                case int _fødselsmåned when _fødselsmåned == 11:
+                    return "Efterår";
+                case int _fødselsmåned when _fødselsmåned == 12:
+                    return "Vinter";
             }
         }
     }
