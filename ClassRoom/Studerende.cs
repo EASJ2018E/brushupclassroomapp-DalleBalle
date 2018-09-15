@@ -11,12 +11,14 @@ namespace ClassRoom
         private string _navn;
         private int _fødselsmåned;
         private int _fødselsdag;
+        private string _årstid;
 
         public Studerende(string navn, int måned, int dag)
         {
             this._navn = navn;
-            this._fødselsmåned = måned;
+            this.Fødselsmåned = måned;
             this._fødselsdag = dag;
+            this._årstid = Årstidberegner.Årstid(Fødselsmåned);
         }
 
         public string Navn
@@ -27,6 +29,21 @@ namespace ClassRoom
         public int Fødselsmåned
         {
             get { return _fødselsmåned; }
+            set
+            {
+                if (value < 1)
+                {
+                    _fødselsmåned = 1;
+                }
+                else if (value > 12)
+                {
+                    _fødselsmåned = 12;
+                }
+                else
+                {
+                    _fødselsmåned = value;
+                }
+            }
         }
 
         public int Fødselsdag
@@ -36,38 +53,7 @@ namespace ClassRoom
 
         public override string ToString()
         {
-            return _navn + " " + _fødselsdag + " " + _fødselsmåned;
-        }
-
-        public string Årstid()
-        {
-            switch (_fødselsmåned)
-            {
-                case int _fødselsmåned when _fødselsmåned == 1:
-                    return "Vinter";
-                case int _fødselsmåned when _fødselsmåned == 2:
-                    return "Vinter";
-                case int _fødselsmåned when _fødselsmåned == 3:
-                    return "Forår";
-                case int _fødselsmåned when _fødselsmåned == 4:
-                    return "Forår";
-                case int _fødselsmåned when _fødselsmåned == 5:
-                    return "Forår";
-                case int _fødselsmåned when _fødselsmåned == 6:
-                    return "Sommer";
-                case int _fødselsmåned when _fødselsmåned == 7:
-                    return "Sommer";
-                case int _fødselsmåned when _fødselsmåned == 8:
-                    return "Sommer";
-                case int _fødselsmåned when _fødselsmåned == 9:
-                    return "Efterår";
-                case int _fødselsmåned when _fødselsmåned == 10:
-                    return "Efterår";
-                case int _fødselsmåned when _fødselsmåned == 11:
-                    return "Efterår";
-                case int _fødselsmåned when _fødselsmåned == 12:
-                    return "Vinter";
-            }
+            return _navn + " " + _fødselsdag + " " + _fødselsmåned + " " + _årstid;
         }
     }
 }
